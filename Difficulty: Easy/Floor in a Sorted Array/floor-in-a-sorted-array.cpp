@@ -10,22 +10,21 @@ class Solution {
     // n: size of vector
     // x: element whose floor is to find
     int findFloor(vector<long long> &v, long long n, long long x) {
-       long long ans = -1;
-        long long lo = 0,hi = v.size()-1;
-        while(lo<=hi){
-            long long mid = lo + (hi-lo)/2;
-            if(v[mid]<=x){
-                ans = mid;
-                lo = mid+1;
-            }
-            else{
-                hi = mid-1;
-            }
+        long long low = 0;
+        long long high = v.size()-1;
+        long long ans =-1;
+        while(low<=high){
+           long long mid = low + (high-low) /2;
+           if(v[mid]<=x){
+               ans = mid;
+               low = mid +1;
+           }
+           else {
+               high = mid-1;
+           }
+           
         }
         return ans;
-
-
-        // Your code here
     }
 };
 
