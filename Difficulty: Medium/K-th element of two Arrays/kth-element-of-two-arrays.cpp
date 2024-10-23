@@ -10,8 +10,7 @@ class Solution {
         int m = arr1.size();
         int n = arr2.size();
          int ele = -1;
-    int cnt = 0; //counter
-    //apply the merge step:
+    int cnt = 0;
     int i = 0, j = 0;
     while (i < m && j < n) {
         if (arr1[i] < arr2[j]) {
@@ -25,8 +24,6 @@ class Solution {
             j++;
         }
     }
-
-    //copy the left-out elements:
     while (i < m) {
         if (cnt == k - 1) ele = arr1[i];
         cnt++;
